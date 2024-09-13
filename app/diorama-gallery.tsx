@@ -61,7 +61,7 @@ export default function DioramaGallery({
           );
         })}
       </CarouselContent>
-      <CarouselPrevious />
+      <CarouselPrevious className="p-10" />
       <CarouselNext />
     </Carousel>
   );

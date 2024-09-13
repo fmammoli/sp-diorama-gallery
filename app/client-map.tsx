@@ -100,7 +100,7 @@ export default function ClientMap() {
         mapStyle="mapbox://styles/mapbox/streets-v12"
       >
         <FullscreenControl containerId="total-container"></FullscreenControl>
-        <NavigationControl></NavigationControl>
+        <NavigationControl showZoom></NavigationControl>
         <GeolocateControl></GeolocateControl>
         <ScaleControl></ScaleControl>
         <div>
