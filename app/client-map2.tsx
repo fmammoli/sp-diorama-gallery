@@ -1,9 +1,8 @@
 "use client";
 import { useFrame, Vector3 } from "@react-three/fiber";
 
-import MapboxGl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { FC, PropsWithChildren, useRef, useState } from "react";
+import { FC, useRef, useState } from "react";
 import Map from "react-map-gl";
 import { Canvas } from "react-three-map";
 import { Mesh } from "three";
