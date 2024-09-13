@@ -95,6 +95,7 @@ export default function ClientMap() {
         {...viewState}
         onMove={(evt) => setViewState(evt.viewState)}
         reuseMaps
+        antialias
         mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_API_ACCESS_TOKEN}
         mapStyle="mapbox://styles/mapbox/streets-v12"
       >
