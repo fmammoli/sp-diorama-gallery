@@ -39,11 +39,11 @@ export default function DioramaGallery({
         setCurrent(currentIndex);
       }
     });
-  }, [api, mapRef, handleChange]);
+  }, [api, mapRef, handleChange, dioramas]);
 
   useEffect(() => {
     handleChange(current);
-  }, [current]);
+  }, [current, handleChange]);
 
   return (
     <Carousel className="w-full max-w-xs" setApi={setApi} opts={{ loop: true }}>
