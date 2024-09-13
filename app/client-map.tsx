@@ -12,7 +12,6 @@ import {
 
 import "mapbox-gl/dist/mapbox-gl.css";
 import { AnimatePresence, motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 
 import DioramaGallery from "./diorama-gallery";
 import { Canvas } from "react-three-map";
@@ -74,12 +73,12 @@ const dioramas = [
 ];
 
 export default function ClientMap() {
-  const [viewState, setViewState] = useState({
-    latitude: dioramas[0].location.lat,
-    longitude: dioramas[0].location.lng,
-    zoom: 15,
-    pitch: 0,
-  });
+  // const [viewState, setViewState] = useState({
+  //   latitude: dioramas[0].location.lat,
+  //   longitude: dioramas[0].location.lng,
+  //   zoom: 15,
+  //   pitch: 0,
+  // });
 
   const [showGallery, setShowGallery] = useState(false);
 
