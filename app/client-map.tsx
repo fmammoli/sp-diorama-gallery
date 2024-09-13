@@ -103,6 +103,7 @@ export default function ClientMap() {
         <NavigationControl showZoom></NavigationControl>
         <GeolocateControl></GeolocateControl>
         <ScaleControl></ScaleControl>
+
         <div>
           <AnimatePresence>
             {showGallery === false && (
