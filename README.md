@@ -34,3 +34,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Process
+
+- Create diorama using My SP Diorama in R.
+- Simplify Mesh using MeshLab util it has less than 100k faces. Filters -> Remashing, Simplification and Reconstruction -> Simplification: Quadratic Edge Collapse Decimation (with texture)
+- Transform in gltf using `npx obj2gltf -i my.obj -o my.gltf`
+- Transform gltf into jsx using `npx gltfjsx my.gltf --transform`
+- put your new object.glb into the public folder and the .jsx into the components folder.
