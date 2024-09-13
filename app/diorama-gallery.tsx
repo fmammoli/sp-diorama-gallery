@@ -39,30 +39,40 @@ export default function DioramaGallery({
         setCurrent(currentIndex);
       }
     });
-  }, [api, mapRef, handleChange, dioramas]);
+  }, [api, mapRef, dioramas]);
 
   useEffect(() => {
     handleChange(current);
   }, [current, handleChange]);
 
   return (
-    <Carousel className="w-full max-w-xs" setApi={setApi} opts={{ loop: true }}>
+    <Carousel
+      className="w-full max-w-[12rem] lg:max-w-sm"
+      setApi={setApi}
+      opts={{ loop: true }}
+    >
       <CarouselContent>
         {dioramas.map((item, index) => {
           return (
             <CarouselItem key={index}>
               <h1
-                className="scroll-m-20 text-6xl font-extrabold tracking-tight lg:text-7xl text-gray-700"
+                className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-7xl text-gray-800 text-center"
                 style={{ textShadow: "0px 0px 5px white" }}
               >
                 <p>{item.name}</p>
               </h1>
+              <h2
+                className="text-center italic text-gray-700 text-sm font-bold"
+                style={{ textShadow: "0px 0px 5px white" }}
+              >
+                {item.location.lat.toFixed(6)} ; {item.location.lng.toFixed(6)}
+              </h2>
             </CarouselItem>
           );
         })}
       </CarouselContent>
-      <CarouselPrevious className="p-10" />
-      <CarouselNext />
+      <CarouselPrevious className="bg-" />
+      <CarouselNext className="" />
     </Carousel>
   );
 }

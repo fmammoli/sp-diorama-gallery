@@ -20,6 +20,7 @@ import { CopanSimp } from "./Copan_simp";
 import { BanespaSimp } from "./Banespa-simp";
 import { SescPaulistaSimp } from "./Sesc_paulista";
 import { PavilhaoJaponesSimp } from "./Pavilhao_japones";
+import Title from "./title";
 
 const dioramas = [
   {
@@ -89,11 +90,19 @@ export default function ClientMap() {
     console.log(index);
   }
 
+  function handleStart() {
+    setShowGallery(true);
+  }
+
   return (
     <div style={{ height: "100svh", width: "100svw" }}>
       <Map
-        {...viewState}
-        onMove={(evt) => setViewState(evt.viewState)}
+        initialViewState={{
+          latitude: dioramas[0].location.lat,
+          longitude: dioramas[0].location.lng,
+          zoom: 15,
+          pitch: 0,
+        }}
         reuseMaps
         antialias
         mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_API_ACCESS_TOKEN}
@@ -105,34 +114,7 @@ export default function ClientMap() {
         <ScaleControl></ScaleControl>
 
         <div>
-          <AnimatePresence>
-            {showGallery === false && (
-              <motion.div
-                className="absolute top-[10%] left-1/2 p-2 mr-auto ml-auto z-10 isolate -translate-x-1/2 flex flex-col items-center"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1.5, delay: 0.5 }}
-              >
-                <h1
-                  className="scroll-m-20 text-6xl font-extrabold tracking-tight lg:text-8xl text-gray-700"
-                  style={{ textShadow: "0px 0px 5px white" }}
-                >
-                  <p>São Paulo</p>
-                  <p>em Miniatura</p>
-                </h1>
-                <div>
-                  <Button
-                    onClick={() => {
-                      setShowGallery(true);
-                    }}
-                    className="align-center"
-                  >
-                    Iniciar
-                  </Button>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <Title showGallery={showGallery} handleStart={handleStart}></Title>
           <AnimatePresence>
             {showGallery && (
               <motion.div
