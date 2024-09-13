@@ -6,7 +6,6 @@ import {
   GeolocateControl,
   Map,
   Marker,
-  MarkerEvent,
   NavigationControl,
   ScaleControl,
 } from "react-map-gl";
