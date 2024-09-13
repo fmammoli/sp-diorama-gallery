@@ -6,6 +6,7 @@ import {
   GeolocateControl,
   Map,
   Marker,
+  MarkerEvent,
   NavigationControl,
   ScaleControl,
 } from "react-map-gl";
@@ -117,7 +118,7 @@ export default function ClientMap() {
           <AnimatePresence>
             {showGallery && (
               <motion.div
-                className="absolute top-[10%] left-1/2 p-2 mr-auto ml-auto z-10 isolate -translate-x-1/2 flex flex-col items-center"
+                className="absolute top-[70%] md:top-[10%] left-1/2 p-2 mr-auto ml-auto z-10 isolate -translate-x-1/2 flex flex-col items-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}

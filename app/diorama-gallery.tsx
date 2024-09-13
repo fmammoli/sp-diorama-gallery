@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselApi,
@@ -45,6 +46,17 @@ export default function DioramaGallery({
     handleChange(current);
   }, [current, handleChange]);
 
+  function handleClick() {
+    const pitch = mapRef.current?.getPitch();
+    if (pitch && pitch > 0) {
+      !mapRef.current?.isMoving() &&
+        mapRef.current?.flyTo({ pitch: 0, duration: 1200, zoom: 15 });
+    } else {
+      !mapRef.current?.isMoving() &&
+        mapRef.current?.flyTo({ pitch: 60, duration: 1200, zoom: 17 });
+    }
+  }
+
   return (
     <Carousel
       className="w-full max-w-[12rem] lg:max-w-sm"
@@ -71,7 +83,11 @@ export default function DioramaGallery({
           );
         })}
       </CarouselContent>
-      <CarouselPrevious className="bg-" />
+      <div className="flex justify-center">
+        <Button onClick={handleClick}>Pitch</Button>
+      </div>
+
+      <CarouselPrevious className="" />
       <CarouselNext className="" />
     </Carousel>
   );
