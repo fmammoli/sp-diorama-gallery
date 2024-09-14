@@ -19,6 +19,7 @@ import { CopanSimp } from "./Copan_simp";
 import { BanespaSimp } from "./Banespa-simp";
 import { SescPaulistaSimp } from "./Sesc_paulista";
 import { PavilhaoJaponesSimp } from "./Pavilhao_japones";
+import { Masp } from "./Masp";
 import Title from "./title";
 
 const dioramas = [
@@ -69,6 +70,14 @@ const dioramas = [
       ></PavilhaoJaponesSimp>
     ),
     model: "BanespaSimp",
+  },
+  {
+    name: "Masp",
+    location: { lat: -23.56120745631961, lng: -46.655302546541854 },
+    modelComp: (
+      <Masp scale={0.34} position={[0, -1240 * 0.34, 0]} opacity={0.1}></Masp>
+    ),
+    model: "Masp",
   },
 ];
 
